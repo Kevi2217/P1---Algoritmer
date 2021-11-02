@@ -1,6 +1,6 @@
 # P1 - Diskret optimering af gaslager
 
-## Gruppemedler:
+## Gruppemedlemmer:
 - Anders Hoff Ranum
 - Chris Møller Nørgaard
 - Kevin Luu
@@ -8,19 +8,8 @@
 - Markus Øhrstrøm Pedersen
 - Rasmus Flaathen Sønder
 
-### Dato:
+### Dato: 3. november 2021
 
 ****
 
-Denne repository indeholder alt kode relateret benyttet i vores P1-projekt f.eks *Brute force* og *Djikstras* algoritme.
-
-$\space$
-
-$\space$
-
-TEst,test
-
-Prøver og se hvordan min VS-code fungere linket med Github.
-
-## RAwr
- **ek**
+Dette repository indeholder alt kode benyttet i og/eller relateret til vores P1-projekt, herunder *Brute force-algoritme* og *Djikstras algoritme* til løsning af korteste vej-problemer.
