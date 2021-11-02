@@ -1,34 +1,43 @@
-import numpy as np
-from math import exp 
+from math import exp
 
 T = 12
-p_t = [20, 22, 25, 18, 15, 15, 20, 19, 21, 12, 22, 25]
-q_max = 10
 q_min = 0
-q_start = 5
+q_max = 10
 i_max = 4
 u_max = 4
-q_0 = 5
+p_t=[20,22,25,18,15,15,20,19,21,12,22,25]
 r = 0.04
-disc = [exp(-r*t/T) for t in range(1, T+1)]
-p_disc = [round(p_t[i]*disc[i],2) for i in range(T)]
-plus = 250
+add = max(p_t) * u_max + 1
+q_start = 5
+
 
 graph = {}
 
-graph[(q_start,0)] = {}
+graph[0, q_start] = {}
 
-for e in range(q_start - u_max if q_start - u_max >= q_min else q_min, q_start + i_max + 1 if q_start + i_max +1 <= q_max + 1 else q_max + 1):
-    graph[(q_start,0)][(e,1)] = np.exp(r * (-1/T)) * (e-q_start) * p_t[0] + plus
+def determine_neighbors(e):
+    if e - u_max <= q_min:
+        a = q_min
+    else:
+        a = e - u_max
+    if e + i_max >= q_max:
+        b = q_max
+    else:
+        b = e + i_max
+    return a, b
 
-for t in range(1,T):
-    for e in range(0,10 + 1):
-        graph[(e,t)] = {}
-        for i in range(e - u_max if e - u_max >= q_min else q_min, e + i_max + 1 if e + i_max + 1 <= 10 +1 else 11):
-            graph[(e,t)][(i,t+1)] = (np.exp(r * (-(t+1)/T)) * (i-e) * p_t[t]) + plus
+for e in range(determine_neighbors(q_start)[0], determine_neighbors(q_start)[1] + 1):
+    graph[0,q_start][1,e] = exp(r * (-1/T)) * (e-q_start) * p_t[0] + add
 
-for e in range(0, 10 + 1):
-    graph[(e,T)] = {}
+
+for t in range(1, T):
+    for e in range(q_min, q_max + 1):
+        graph[(t,e)] = {}
+        a, b = determine_neighbors(e)
+        for i in range(a, b+1):
+            graph[t,e][t+1,i] = exp(r * (-(t+1)/T)) * (i-e) * p_t[t] + add
+
+for e in range(0, 11):
+    graph[(T,e)] = {}
 
 print(graph)
-
