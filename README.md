@@ -5,7 +5,6 @@
 - Chris Møller Nørgaard
 - Kevin Luu
 - Magnus Christiansen
-- Markus Øhrstrøm Pedersen
 - Rasmus Flaathen Sønder
 
 ### Dato: 3. november 2021
