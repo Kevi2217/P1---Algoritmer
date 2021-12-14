@@ -11,4 +11,4 @@
 
 ****
 
-Dette repository indeholder alt kode benyttet i og/eller relateret til vores P1-projekt, herunder *Brute force-algoritme* og *Djikstras algoritme* til løsning af korteste vej-problemer.
+Dette repository indeholder al kode benyttet i og/eller relateret til vores P1-projekt, herunder *Djikstras algoritme* og *algoritmer baseret på distancematricer* til løsning af korteste vej-problemer samt *algoritmer til beregning af totale antal løsninger*.
