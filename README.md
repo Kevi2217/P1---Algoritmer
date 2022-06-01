@@ -5,7 +5,7 @@
 - Chris Møller Nørgaard
 - Kevin Luu
 - Magnus Christiansen
-- Rasmus Flaathen Sønder
+- ______ ________ ______
 
 ### Dato: 22. december 2021
 
